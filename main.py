@@ -9,7 +9,6 @@ pygame.init()
 
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("Conveyor Belt Attack")
-# todo: make an icon for the game
 font = pygame.font.Font(get_path("assets", "font.ttf"), 36)
 bigger_font = pygame.font.Font(get_path("assets", "font.ttf"), 48)
 timer_font = pygame.font.Font(get_path("assets", "timer.ttf"), 48)

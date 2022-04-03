@@ -1,8 +1,16 @@
 from pygame import Color
+import platform
+from win32api import EnumDisplayDevices, EnumDisplaySettings
 
 # pygame stuff
 WIDTH, HEIGHT = 1280, 720
-FRAMERATE = 75  # todo change this to windows default or 60 default when game released
+FRAMERATE = 60  # change this to your monitor refresh rate if using windows, dont have a linux or mac to test it on
+if platform.system() == "Windows":  # windows
+    FRAMERATE = EnumDisplaySettings(EnumDisplayDevices().DeviceName, -1).DisplayFrequency
+if platform.system() == "Linux":  # linux
+    pass
+if platform.system() == "Darwin":  # mac
+    pass
 
 # game colors
 BG_COLOR = Color(255, 255, 255)  # white
